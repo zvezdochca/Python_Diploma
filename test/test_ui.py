@@ -12,37 +12,37 @@ def driver():
     yield driver
     driver.quit()
 
-@allure.story("Ввод значений в поле поиск")
+@allure.title("Получение фильмов с вводам данных на кириллице")
+@allure.story("Получение фильма по названию")
 @allure.epic("Поиск")
 def test_search_cyrillic(driver):
-    with allure.step("Ввод данных на кириллице."):
      page_ui = Page_ui(driver)
      page_ui.search_cyrillic('Девчата')
 
-@allure.story("Ввод значений в поле поиск")
+@allure.title("Получение фильмов с вводам данных на латинице")
+@allure.story("Получение фильма по названию")
 @allure.epic("Поиск")
 def test_search_latin(driver):
-    with allure.step("Ввод данных на латинице."):
      page_ui = Page_ui(driver)
      page_ui.search_latin('Star Wars')
 
-@allure.story("Ввод значений в поле поиск")
+@allure.title("Получение фильмов с использованием дефисов в название")
+@allure.story("Получение фильма по названию")
 @allure.epic("Поиск")
 def test_search_hyphen_beginning_the_end(driver):
-    with allure.step("Ввод данных с дефисам."):
      page_ui = Page_ui(driver)
      page_ui.search_hyphen_beginning_the_end('-Девчата-')
 
-@allure.story("Ввод значений в поле поиск")
+@allure.title("Получение фильмов ввод данных цифрами")
+@allure.story("Получение фильма по названию")
 @allure.epic("Поиск")
 def test_search_figure(driver):
-    with allure.step("Ввод данных цифрами."):
      page_ui = Page_ui(driver)
      page_ui.search_figure('123')
 
-@allure.story("Ввод значений в поле поиск")
+@allure.title("Получение фильмов с пустым полем ввода")
+@allure.story("Получение фильма по названию")
 @allure.epic("Поиск")
 def test_empty_field(driver):
-    with allure.step("Пустое поле ввода."):
      page_ui = Page_ui(driver)
      page_ui.empty_field('')

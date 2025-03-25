@@ -13,32 +13,37 @@ class Page_ui:
 
     def search_cyrillic(self, term:str) -> str:
         """Эта функция находит фильм с вводом данных на кириллице."""
-        self._driver.implicitly_wait(20)
-        self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
-        self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
+        with allure.step("Ввод данных на кириллице."):
+         self._driver.implicitly_wait(20)
+         self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
+         self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
 
     def search_latin(self, term:str) -> str:
         """Эта функция находит фильм с вводом данных на латинице."""
-        self._driver.implicitly_wait(20)
-        self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
-        self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
+        with allure.step("Ввод данных на латинице."):
+         self._driver.implicitly_wait(20)
+         self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
+         self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
 
 
     def search_hyphen_beginning_the_end(self, term:str) -> str:
         """Эта функция находит фильм с вводом данных с дефисами."""
-        self._driver.implicitly_wait(20)
-        self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
-        self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
+        with allure.step("Ввод данных с дефисам."):
+         self._driver.implicitly_wait(20)
+         self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
+         self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
 
 
     def search_figure(self, term:str) -> str:
         """Эта функция находит фильм с вводом данных только цифры."""
-        self._driver.implicitly_wait(20)
-        self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
-        self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
+        with allure.step("Ввод данных цифрами."):
+         self._driver.implicitly_wait(20)
+         self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
+         self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
 
     def empty_field(self, term:str) -> str:
         """Эта функция находит фильм с пустым полем ввода."""
-        self._driver.implicitly_wait(20)
-        self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
-        self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
+        with allure.step("Пустое поле ввода."):
+         self._driver.implicitly_wait(20)
+         self._driver.find_element(By.CSS_SELECTOR, "input[name='kp_query']").send_keys(term)
+         self._driver.find_element(By.CSS_SELECTOR, "button[aria-label='Найти']").click()
