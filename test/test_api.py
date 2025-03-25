@@ -19,7 +19,6 @@ def test_movie_title_search():
                                '%D0%94%D0%B5%D0%B2%D1%87%D0%B0%D1%82%D0%B0',
                                headers=header)
 
-    print(title_movie.json())
     assert title_movie.status_code == 200
 
 
@@ -31,7 +30,6 @@ def test_movie_title_id():
     with allure.step("Найти фильм по id."):
      title_id = requests.get(url + '/movie/44168', headers=header)
 
-    print(title_id.json())
     assert title_id.status_code == 200
 
 
@@ -44,7 +42,6 @@ def test_movie_title_top10():
      top_10 = requests.get(url + '/movie/random?notNullFields=top10',
                           headers=header)
 
-    print(top_10.json())
     assert top_10.status_code == 200
 
 
@@ -57,7 +54,6 @@ def test_movie_title_top1000():
      top_1000 = requests.get(url + '/movie/random?notNullFields=top1000',
                             headers=header)
 
-    print(top_1000.json())
     assert top_1000.status_code == 400
 
 
@@ -69,5 +65,4 @@ def test_movie_title_id_symbols():
     with allure.step("Найти фильмы с добавлением символов в название."):
      id_symbols = requests.get(url + '/movie/44168...', headers=header)
 
-    print(id_symbols.json())
     assert id_symbols.status_code == 400
